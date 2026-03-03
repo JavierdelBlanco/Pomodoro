@@ -1,0 +1,90 @@
+/* Definición de los colores del logo para reutilizar fácilmente */
+:root {
+    --color-crema: #fdf5e6;
+    /* Un beige suave como el fondo de las letras */
+    --color-marron: #795548;
+    /* El marrón oscuro del borde de las letras */
+    --color-tomate: #e74c3c;
+    /* El rojo del tomate */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-crema);
+    /* Fondo beige para toda la página */
+    color: var(--color-marron);
+    /* Texto principal en marrón */
+    display: flex;
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
+    height: 100vh;
+    /* Usa todo el alto de la pantalla */
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    /* Centra el texto dentro del contenedor */
+    display: flex;
+    flex-direction: column;
+    /* Apila los elementos (logo, timer, botones) */
+    align-items: center;
+    /* Centra los elementos apilados horizontalmente */
+    gap: 20px;
+    /* Espacio uniforme entre elementos */
+}
+
+/* Estilos para el Logotipo */
+#main-logo {
+    width: 500px;
+    /* Tamaño ajustado para que no sea gigante */
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Estilos para el Temporizador */
+#timer {
+    font-size: 6rem;
+    font-weight: bold;
+    color: var(--color-marron);
+    /* Color rojo llamativo para el tiempo */
+    margin: 0;
+    line-height: 1;
+}
+
+/* Estilos para el contenedor de botones */
+.controls {
+    display: flex;
+    gap: 15px;
+    /* Espacio entre los botones */
+}
+
+/* Estilos para los botones */
+button {
+    background-color: var(--color-marron);
+    /* Fondo marrón */
+    color: var(--color-crema);
+    /* Texto beige */
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    /* Animación suave */
+}
+
+/* Efecto al pasar el mouse por encima */
+button:hover {
+    background-color: #5d4037;
+    /* Un marrón un poco más oscuro */
+}
+
+/* Efecto al hacer click */
+button:active {
+    transform: scale(0.97);
+    /* Pequeño efecto de pulsación */
+}
