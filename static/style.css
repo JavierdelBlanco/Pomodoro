@@ -6,6 +6,10 @@
     /* El marrón oscuro del borde de las letras */
     --color-tomate: #e74c3c;
     /* El rojo del tomate */
+
+    --color-focus: #e74c3c;
+    --color-relax: #439258;
+    --color-pause: #A67C52;
 }
 
 body {
@@ -45,6 +49,36 @@ body {
 }
 
 /* Estilos para el Temporizador */
+#state {
+    font-size: 6rem;
+    font-weight: bold;
+    /* Color rojo llamativo para el tiempo */
+    margin: 0;
+    line-height: 1;
+}
+
+
+.start-mode {
+    color: var(--color-marron);
+    /* Un naranja/ámbar para la pausa */
+}
+
+/* Colores de estado específicos */
+.focus-mode {
+    color: var(--color-focus);
+}
+
+.relax-mode {
+    color: var(--color-relax);
+    /* Un verde esmeralda que queda bien con el marrón */
+}
+
+.pause-mode {
+    color: var(--color-pause);
+    /* Un naranja/ámbar para la pausa */
+}
+
+/* Estilos para el Temporizador */
 #timer {
     font-size: 6rem;
     font-weight: bold;
@@ -64,17 +98,27 @@ body {
 /* Estilos para los botones */
 button {
     background-color: var(--color-marron);
-    /* Fondo marrón */
     color: var(--color-crema);
-    /* Texto beige */
     border: none;
-    padding: 12px 24px;
-    font-size: 1.1rem;
+
+    /* MODIFICACIONES AQUÍ */
+    width: 100px;
+    /* Ajusta este valor según te guste */
+    height: 50px;
+    /* Mantenerlo cuadrado o rectangular fijo */
+    padding: 0;
+    /* Quitamos el padding lateral para que no empuje */
+
+    /* Centrado del símbolo */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2rem;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
-    /* Animación suave */
 }
 
 /* Efecto al pasar el mouse por encima */
@@ -87,4 +131,40 @@ button:hover {
 button:active {
     transform: scale(0.97);
     /* Pequeño efecto de pulsación */
+}
+
+/* Estilos de la Notificación */
+.notification {
+    position: fixed;
+    top: 20px;
+    /* Aparecerá arriba */
+    right: 20px;
+    background-color: var(--color-marron);
+    color: var(--color-crema);
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-content button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    background-color: var(--color-crema);
+    color: var(--color-marron);
+}
+
+/* Clases para mostrar/ocultar */
+.hidden {
+    opacity: 0;
+    transform: translateY(-100px);
+    /* Se esconde hacia arriba */
+    pointer-events: none;
 }

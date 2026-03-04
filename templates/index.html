@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Pomodoro</title>
+    <title>Pomodoro</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
@@ -14,12 +15,18 @@
             <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Pomodoro" id="main-logo">
         </div>
 
+        <div id="state" , class="start-mode">---</div>
         <div id="timer">40:00</div>
 
         <div class="controls">
-            <button id="start">Iniciar</button>
-            <button id="pause">Pausar</button>
-            <button id="reset">Reiniciar</button>
+            <button id="play">▶</button>
+            <button id="reset">■</button>
+        </div>
+    </div>
+    <div id="notification" class="notification hidden">
+        <div class="notification-content">
+            <span id="notification-text"></span>
+            <button id="close-notification">OK</button>
         </div>
     </div>
 
